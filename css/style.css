@@ -1,0 +1,39 @@
+body {
+  background-color: #000;
+}
+#headcoin {
+  width: 40%;
+  height: 660px;
+  background: url(../img/coin.jpg) -79px -66px;
+  margin: 0 auto;
+  display: none;
+}
+#tailcoin {
+  width: 40%;
+  height: 660px;
+  background: url(../img/coin.jpg) -730px -66px;
+  margin: 0 auto;
+  display: none;
+}
+#empty {
+  width: 40%;
+  height: 660px;
+  margin: 0 auto;
+  display: block;
+}
+.buttons {
+  margin-left: 36%;
+}
+button {
+  width: 20%;
+  height: 50px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+output {
+  color: #fff;
+  font-size: 20px;
+  display: block;
+  margin-left: 45%;
+  margin-top: 5px;
+}
