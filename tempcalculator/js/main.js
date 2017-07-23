@@ -125,21 +125,18 @@ var tempFormulaOther = [
 ]
 
 document.getElementById('calculate').addEventListener('click', function(){
+  var d = parseFloat($calinp.value, 10);
 	if (a===b) {
 	  $result.innerText = "Nie ma co przeliczać";
-		console.log(a, b)
 	} else if (a===1) {
-    var d = parseFloat($calinp.value, 10);
-    var i = b-2;
+      var i = b-2;
     tempFormulaCel[i] (d);
     $result.innerText = x;
   } else if (a !== 1 && b === 1){
-		var d = parseFloat($calinp.value, 10);
 		var i = a-2;
 		tempFormulaOther[i] (d);
 		$result.innerText = x;
 	}	else{
-  	var d = parseFloat($calinp.value, 10);
   	var i = a-1;
   	tempFormulaOther[i] (d);
   	i = b-2;
