@@ -1,0 +1,4 @@
+.temp_option:focus {
+  background-color: black;
+  color: #fff;
+}
