@@ -76,65 +76,74 @@ $Ro2.addEventListener('click', function () {
 });
 
 
-var tempFormulaCel = {
-  celKel: function(c) {
-    x = c+273.15;
-  },
-  celFah: function(c) {
+var tempFormulaCel = [
+  function celKel (c) {
+   x = c+273.15;
+ },
+  function celFah (c) {
     x = c*(9/5)-32;
   },
-  celRan: function(c) {
+  function celRan (c) {
     x = (b+273.15)*(9/5);
   },
-  celDenl: function(c) {
+  function celDenl (c) {
     x = (100-c)*(3/2);
   },
-  celNew: function(c) {
+  function celNew (c) {
     x = c*(33/100);
   },
-  celRea: function(c) {
+  function celRea (c) {
     x = c*(4/5);
   },
-  celRo: function(c) {
+  function celRo (c) {
     x = (c+7.5)*(21/40);
   }
-}
+]
 
-var tempFormulaOther = {
-  kelCel: function(c) {
+var tempFormulaOther = [
+  function kelCel (c) {
     x = c-273.15;
   },
-  fahCel: function(c) {
+  function fahCel (c) {
     x = (5/9)*c+32;
   },
-  ranCel: function(c) {
+  function ranCel (c) {
     x = (c-273.15)*5/9;
   },
-  denlCel: function(c) {
+  function denlCel (c) {
     x = 100-(c*2/3);
   },
-  newCel: function(c) {
+  function newCel (c) {
     x = c*(100/33);
   },
-  reaCel: function(c) {
+  function reaCel (c) {
     x = c*(5/4);
   },
-  roCel: function(c) {
+  function roCel (c) {
     x = (c-7,5)*(40/21);
   }
-}
-
-tempFormulaCel.celKel(10);
-      console.log(x)
+]
 
 document.getElementById('calculate').addEventListener('click', function(){
-  if (a===1) {
-    if (b===1) {
-
-    } else if (b===2){
-      var d = parseFloat($calinp.value, 10);
-      tempFormulaCel.celKel(d);
-      $result.innerText = x;
-    }
-  }
+	if (a===b) {
+	  $result.innerText = "Nie ma co przeliczać";
+		console.log(a, b)
+	} else if (a===1) {
+    var d = parseFloat($calinp.value, 10);
+    var i = b-2;
+    tempFormulaCel[i] (d);
+    $result.innerText = x;
+  } else if (a !== 1 && b === 1){
+		var d = parseFloat($calinp.value, 10);
+		var i = a-2;
+		tempFormulaOther[i] (d);
+		$result.innerText = x;
+	}	else{
+  	var d = parseFloat($calinp.value, 10);
+  	var i = a-1;
+  	tempFormulaOther[i] (d);
+  	i = b-2;
+  	tempFormulaCel[i] (x);
+  	$result.innerText = x;
+	}
 })
